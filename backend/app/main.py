@@ -1,10 +1,11 @@
 from fastapi import FastAPI
+from app.core.settings import settings
 
 from app.api.health import router as health_router
 
 app = FastAPI(
-    title = "Hooshyar AI" ,
-    version = "0.1.0",
+    title =settings.APP_NAME ,
+    version =settings.APP_VERSION
 )
 
 app.include_router(health_router)
